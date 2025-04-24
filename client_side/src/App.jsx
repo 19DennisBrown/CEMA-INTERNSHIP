@@ -9,6 +9,7 @@ import HomePage from './pages/Homepage';
 import LoginPage from './pages/Loginpage';
 import RegisterPage from './pages/Registerpage';
 import Header from './components/Header';
+import ProfileCreate from './pages/Profile/ProfileCreate';
 
 function App() {
   return (
@@ -18,8 +19,12 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<PrivateRoute><HomePage /></PrivateRoute>} />
+            {/* Authentication */}
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage/>} />
+
+            {/* Profile routes */}
+            <Route path="/profile_create" element={<ProfileCreate/>} />
           </Routes>
         </AuthProvider>
       </Router>

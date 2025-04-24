@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     
     #Installed apps
     'userAuth', # Custom user authentication app
+    'doctor', # Doctor profile app
      
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
