@@ -10,6 +10,8 @@ import LoginPage from './pages/Loginpage';
 import RegisterPage from './pages/Registerpage';
 import Header from './components/Header';
 import ProfileCreate from './pages/Profile/ProfileCreate';
+import ProfileUpdate from './pages/Profile/ProfileUpdate';
+import ProfileView from './pages/Profile/ProfileView';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
 
             {/* Profile routes */}
             <Route path="/profile_create" element={<ProfileCreate/>} />
+            <Route path="/profile_view" element={<ProfileView />} />
+            <Route path="/profile_update" element={<ProfileUpdate />} />
           </Routes>
         </AuthProvider>
       </Router>
