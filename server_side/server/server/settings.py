@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'userAuth', # Custom user authentication app
     'doctor', # Doctor profile app
     'health_program', # Program app
+    'doctor_client', # Patient app
      
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',

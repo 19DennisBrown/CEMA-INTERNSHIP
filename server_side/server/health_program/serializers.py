@@ -11,7 +11,7 @@ class HealthProgramSerializer(serializers.ModelSerializer):
         request = self.context.get('request')
         doctor = request.user.doctorprofile
 
-        # When updating, exclude the current instance from the check
+        
         if self.instance:
             exists = HealthProgram.objects.filter(doctor=doctor, title=value).exclude(pk=self.instance.pk).exists()
         else:

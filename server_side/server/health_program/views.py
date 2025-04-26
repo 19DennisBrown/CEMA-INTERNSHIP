@@ -4,9 +4,6 @@ from rest_framework.permissions import IsAuthenticated
 from .models import HealthProgram
 from .serializers import HealthProgramSerializer
 from rest_framework.generics import CreateAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView
-from rest_framework.permissions import IsAuthenticated
-from .models import HealthProgram
-from .serializers import HealthProgramSerializer
 
 # Create Health Program
 class HealthProgramCreateView(CreateAPIView):
@@ -17,7 +14,7 @@ class HealthProgramCreateView(CreateAPIView):
         return {'request': self.request}
     
     
-
+# View all health programs
 class DoctorProgramListView(APIView):
     permission_classes = [IsAuthenticated]
 
