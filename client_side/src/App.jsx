@@ -8,7 +8,6 @@ import { AuthProvider } from './context/AuthContext';
 import HomePage from './pages/Homepage';
 import LoginPage from './pages/Loginpage';
 import RegisterPage from './pages/Registerpage';
-import Header from './components/Header';
 import ProfileCreate from './pages/Profile/ProfileCreate';
 import ProfileUpdate from './pages/Profile/ProfileUpdate';
 import ProfileView from './pages/Profile/ProfileView';
@@ -17,13 +16,17 @@ import ViewPatients from './pages/patient/ViewPatients';
 import OnePatientView from './pages/patient/OnePatientView';
 import CreateProgram from './pages/program/CreateProgram';
 import ProgramView from './pages/program/ViewProgram';
+import PatientUpdate from './pages/patient/PatientUpdate';
+import DeletePatient from './pages/patient/DeletePatient';
+import OneProgramView from './pages/program/OneProgramView';
+import UpdateProgram from './pages/program/UpdateProgram';
+import DeleteProgram from './pages/program/DeleteProgram';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <AuthProvider>
-          <Header />
           <Routes>
             <Route path="/" element={<PrivateRoute><HomePage /></PrivateRoute>} />
             {/* Authentication */}
@@ -38,11 +41,16 @@ function App() {
             {/* Program Routes */}
             <Route path="/create_program" element={<CreateProgram />} />
             <Route path="/view_programs" element={<ProgramView />} />
+            <Route path="/view_program/:id" element={<OneProgramView />} />
+            <Route path="/update_program/:id" element={<UpdateProgram />} />
+            <Route path="/delete_program/:id" element={<DeleteProgram />} />
 
             {/* Patient Routes */}
             <Route path="/add_patient" element={<AddPatient />} />
             <Route path="/view_patients" element={<ViewPatients />} />
             <Route path="/view_patient/:id" element={<OnePatientView />} />
+            <Route path="/update_patient/:id" element={<PatientUpdate />} />
+            <Route path="/delete_patient/:id" element={<DeletePatient />} />
 
           </Routes>
         </AuthProvider>

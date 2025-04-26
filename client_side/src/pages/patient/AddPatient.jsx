@@ -56,7 +56,7 @@ const AddPatient = () => {
     };
 
     return (
-        <div className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg">
+        <div className="w-full mx-auto p-6 bg-white shadow-md rounded-lg">
             <h2 className="text-2xl font-bold mb-4">Add New Patient</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div>

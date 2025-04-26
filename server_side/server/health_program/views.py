@@ -44,3 +44,4 @@ class HealthProgramDeleteView(DestroyAPIView):
     queryset = HealthProgram.objects.all()
     permission_classes = [IsAuthenticated]
     lookup_field = 'id'
+

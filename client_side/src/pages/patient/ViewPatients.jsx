@@ -35,7 +35,7 @@ const ViewPatients = () => {
     if (error) return <p className="text-red-500">{error}</p>;
 
     return (
-        <div className="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+        <div className="w-full mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
             <h2 className="text-2xl font-bold mb-6">Your Patients</h2>
             {patients.length === 0 ? (
                 <p>No patients found.</p>

@@ -63,8 +63,8 @@ export const AuthProvider = ({ children }) => {
         let data = await response.json();
 
         if (response.status === 201) {
-            alert('Registration successful!');
-            navigate('/'); // Redirect to home after registration
+            // alert('Registration successful!');
+            navigate('/login'); // Redirect to home after registration
         } else {
             alert('Registration failed!');
         }
@@ -127,7 +127,7 @@ export const AuthProvider = ({ children }) => {
         }, 1000 * 60 * 24); // Refresh every 24 minutes
 
         return () => clearInterval(interval);
-    }, []); // ✅ Empty dependency array prevents infinite re-renders
+    }, []); //  Empty dependency array prevents infinite re-renders
 
     return (
         <AuthContext.Provider value={{ user, authTokens, loginUser, logoutUser, registerUser }}>

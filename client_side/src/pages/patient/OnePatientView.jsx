@@ -42,8 +42,8 @@ const OnePatientView = () => {
 
             <section className="grid grid-cols-3 gap-2 mt-4">
                 <button className="border-1 border-green-400 text-green-500 px-4 rounded-md " onClick={()=>navigate(-1)} >Exit</button>
-                <button className="border-1 border-orange-400 text-orange-500 px-4 rounded-md " onClick={()=>navigate(-1)} >Update</button>
-                <button className="border-1 border-red-400 px-4 rounded-md text-red-500" onClick={()=>navigate(-1)} >Delete</button>
+                <button className="border-1 border-orange-400 text-orange-500 px-4 rounded-md " onClick={()=>navigate(`/update_patient/${patient.id}`)} >Update</button>
+                <button className="border-1 border-red-400 px-4 rounded-md text-red-500" onClick={()=>navigate(`/delete_patient/${patient.id}`)} >Delete</button>
             </section>
         </div>
     );

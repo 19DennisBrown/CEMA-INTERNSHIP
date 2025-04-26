@@ -1,3 +1,5 @@
+from .models import HealthProgram
+from doctor_client.serializers import HealthProgramWithPatientsSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
@@ -52,5 +54,14 @@ class DoctorPatientUpdateView(UpdateAPIView):
 # Delete a patient
 class DoctorPatientDeleteView(DestroyAPIView):
     queryset = DoctorPatient.objects.all()
+    permission_classes = [IsAuthenticated]
+    lookup_field = 'id'
+
+
+
+# patient in a specific program
+class HealthProgramDetailWithPatientsView(RetrieveAPIView):
+    queryset = HealthProgram.objects.all()
+    serializer_class = HealthProgramWithPatientsSerializer
     permission_classes = [IsAuthenticated]
     lookup_field = 'id'

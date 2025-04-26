@@ -5,6 +5,7 @@ from .views import (
     DoctorPatientUpdateView,
     DoctorPatientDeleteView,
     DoctorPatientListView,
+    HealthProgramDetailWithPatientsView
 )
 
 urlpatterns = [
@@ -13,4 +14,5 @@ urlpatterns = [
     path('<int:id>/view/', DoctorPatientDetailView.as_view(), name='doctor-patient-detail'),
     path('<int:id>/update/', DoctorPatientUpdateView.as_view(), name='doctor-patient-update'),
     path('<int:id>/delete/', DoctorPatientDeleteView.as_view(), name='doctor-patient-delete'),
+    path('programs/<int:id>/with-patients/', HealthProgramDetailWithPatientsView.as_view(), name='program-detail-with-patients'),
 ]

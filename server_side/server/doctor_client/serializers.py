@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import DoctorPatient
 from health_program.models import HealthProgram
+from .models import DoctorPatient
 
 class DoctorPatientSerializer(serializers.ModelSerializer):
     # Accept health_program ID for input
@@ -15,14 +16,7 @@ class DoctorPatientSerializer(serializers.ModelSerializer):
     class Meta:
         model = DoctorPatient
         fields = [
-            'id',
-            'doctor',
-            'health_program',       # used for POST
-            'health_program_title', # shown when fetching
-            'first_name',
-            'last_name',
-            'insurance_code',
-            'date_created',
+            'id','doctor','health_program','health_program_title','first_name','last_name','insurance_code','date_created',
         ]
         read_only_fields = ['id', 'doctor', 'date_created']
 
@@ -43,3 +37,15 @@ class DoctorPatientSerializer(serializers.ModelSerializer):
         instance.insurance_code = validated_data.get('insurance_code', instance.insurance_code)
         instance.save()
         return instance
+
+class HealthProgramWithPatientsSerializer(serializers.ModelSerializer):
+    patients = serializers.SerializerMethodField()
+
+    class Meta:
+        model = HealthProgram
+        fields = ['id', 'doctor', 'title', 'date_created', 'patients']
+        read_only_fields = ['id', 'doctor', 'date_created']
+
+    def get_patients(self, obj):
+        patients = DoctorPatient.objects.filter(health_program=obj)
+        return DoctorPatientSerializer(patients, many=True).data

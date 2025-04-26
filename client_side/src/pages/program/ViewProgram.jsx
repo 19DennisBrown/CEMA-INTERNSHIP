@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'
 
 const ProgramView = () => {
+    const navigate = useNavigate();
     const [programs, setPrograms] = useState([]);
     const [error, setError] = useState('');
 
@@ -27,7 +29,7 @@ const ProgramView = () => {
     }, []);
 
     return (
-        <div className="max-w-3xl mx-auto mt-10 p-6 bg-white shadow-md rounded-xl">
+        <div className="w-full mx-auto  p-6 bg-white shadow-md rounded-xl">
             <h2 className="text-2xl font-bold mb-6">My Health Programs</h2>
 
             {error && <p className="text-red-500">{error}</p>}
@@ -37,7 +39,7 @@ const ProgramView = () => {
             ) : (
                 <ul className="space-y-4">
                     {programs.map((program) => (
-                        <li key={program.id} className="p-4 border border-gray-200 rounded-md shadow-sm">
+                        <li key={program.id} className="p-4 border border-gray-200 rounded-md shadow-sm" onClick={() => navigate(`/view_program/${program.id}`)}>
                             <h3 className="text-xl font-semibold">{program.title}</h3>
                             <p className="text-sm text-gray-500">
                                 Created on: {new Date(program.date_created).toLocaleString()}
@@ -46,6 +48,7 @@ const ProgramView = () => {
                     ))}
                 </ul>
             )}
+           
         </div>
     );
 };

@@ -36,7 +36,7 @@ const ProfileView = () => {
   }
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-md mt-6">
+    <div className="w-full mx-auto p-6 bg-white shadow-md rounded-md mt-6">
       <h1 className="text-2xl font-bold mb-4">My Profile</h1>
       <p>
         <strong>First Name:</strong> {profile.firstname}

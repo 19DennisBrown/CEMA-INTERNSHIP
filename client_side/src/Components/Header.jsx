@@ -5,7 +5,7 @@ import AuthContext from '../context/AuthContext'
 const Header = () => {
     let {user, logoutUser} = useContext(AuthContext)
     return (
-            <div className="flex items-center gap-4 p-4 bg-gray-100 shadow-md">
+            <div className="w-full flex items-center gap-4 p-4 bg-gray-100 shadow-md">
                 <Link to="/" className="text-blue-500 hover:underline font-semibold">Home</Link>
                 <span className="text-gray-500">|</span>
                 

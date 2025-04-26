@@ -48,7 +48,7 @@ const CreateProgram = () => {
     };
 
     return (
-        <div className="max-w-xl mx-auto mt-10 p-6 bg-white shadow-md rounded-xl">
+        <div className="w-full mx-auto mt-4 p-6 bg-white shadow-md rounded-xl">
             <h2 className="text-2xl font-bold mb-6">Create Health Program</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
