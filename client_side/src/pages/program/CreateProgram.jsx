@@ -38,8 +38,9 @@ const CreateProgram = () => {
                 }
             );
             if (response.status === 201) {
-                alert('Program created successfully!');
+                // alert('Program created successfully!');
                 navigate('/');
+                window.location.reload();
             }
         } catch (error) {
             console.error('Error creating program:', error);
@@ -72,6 +73,15 @@ const CreateProgram = () => {
                     Submit
                 </button>
             </form>
+            <div className="flex flex-col sm:flex-row justify-end gap-3 pt-4">
+        <button
+          type="button"
+          onClick={() => navigate(-1)}
+          className="px-6 py-2 border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+        >
+          Cancel
+        </button>
+      </div>
         </div>
     );
 };
